@@ -1,0 +1,16 @@
+function fillPage() {
+
+var rowTotal= document.getElementById('listing_table').rows.length
+var rowCells = document.getElementById('listing_table').rows[0].cells.length;
+
+for (var i = rowTotal; i<20; i++){
+
+   var totalRow = document.getElementById('listing_table').insertRow(rowTotal)
+   var rowCells = document.getElementById('listing_table').rows[0].cells.length;
+   for ( var x = 0; x < rowCells ; x++) {
+
+            var cell = totalRow.insertCell(x);
+
+        }
+}
+  }

@@ -1,0 +1,22 @@
+var tbl = document.getElementById('listing_table')// table reference
+       
+    for (i = 0; i < tbl.rows.length; i++) {
+       tbl.rows[i].insertCell(tbl.rows[i].cells.length)
+    }
+
+
+
+// Append Child way
+
+var newTR = document.getElementById('listing_table').getElementsByTagName("tr");
+   var newTH = document.createElement('th');
+  
+
+    newTH.setAttribute('id','newTH');
+    newTH.innerHTML = "Column TH Name"
+    newTR[0].appendChild(newTH)
+    for (var i = 1; i < newTR.length; i++ ) {
+        var newTD = document.createElement('td');
+        newTD.setAttribute('class','newTD');
+        newTR[i].appendChild(newTD)
+}

@@ -1,0 +1,6 @@
+function roundingTaxes() {
+var taxValue = document.querySelectorAll('#listing_table tr td:nth-child(4)')
+for(var i=0; i<taxValue.length; i++){
+taxValue[i].innerText = parseFloat(taxValue[i].innerText.replace(/\,/g,''),10).toFixed(2)
+}
+}

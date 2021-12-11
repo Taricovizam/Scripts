@@ -1,0 +1,13 @@
+<script>
+    
+function hideDiscount() {
+var discountRow = document.getElementById('discount_row')
+var discountValue = document.getElementById('discount_value')
+discountValue = parseFloat(discountValue.innerText.split('ر.س').join(''),10)
+console.log(discountValue)
+if (discountValue == 0){
+discountRow.classList.add('hidden-class');console.log('yes')
+}else{discountRow.classList.remove('hidden-class')}
+}
+
+</script>

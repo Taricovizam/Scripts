@@ -1,0 +1,26 @@
+<script>
+        function swap(in1,in2,table_id)
+        {
+          var table = document.getElementById(table_id);
+          var tableRows = table.rows
+          var tableCells = table.rows[0].cells.length
+           console.log(tableCells)
+          for (var i = 0 ; i <tableCells ; i++)
+          {
+            var temp = tableRows[in1].cells[i].innerHTML;
+            console.log(temp)
+            tableRows[in1].cells[i].innerHTML =  tableRows[in2].cells[i].innerHTML;
+            tableRows[in2].cells[i].innerHTML = temp;
+          }
+        }
+        try
+        {
+            swap(0,1,'listing_table');
+             
+        }
+        catch(err)
+        {
+      
+        }
+      
+        </script>

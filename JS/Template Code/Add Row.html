@@ -1,0 +1,14 @@
+var firstTable = document.querySelector('#items-list>table:first-child')
+ 
+        var rowNum = firstTable.rows.length;
+        var rowCells = firstTable.rows[0].cells.length;
+        var totalRow = firstTable.insertRow(rowNum)
+        
+
+        for ( var i = 0; i < rowCells ; i++) {
+
+            var cell = totalRow.insertCell(i);
+             
+           
+
+        }

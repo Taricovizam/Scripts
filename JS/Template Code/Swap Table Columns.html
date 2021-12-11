@@ -1,0 +1,22 @@
+<script>
+  function swap(in1,in2,table_id)
+  {
+    var table = document.getElementById(table_id);
+    for (var i = 0, row; row = table.rows[i]; i++)
+    {
+      var temp = row.cells[in1].innerHTML;
+      row.cells[in1].innerHTML = row.cells[in2].innerHTML;
+      row.cells[in2].innerHTML = temp;
+    }
+  }
+  try
+  {
+        swap(4,2,'listing_table');
+         swap(3,4,'listing_table');
+  }
+  catch(err)
+  {
+
+  }
+
+  </script>
