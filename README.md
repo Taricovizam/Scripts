@@ -7,12 +7,12 @@ This repo contains JS scripts that help in customizing some inexisting features 
 - u probably, coming here, have a question that needs an answer or are desperate for a helping hint => use the most prominant verb in ur question to look up what u want. 
 - Use these verbs as keywords to find want u looking for:
 
-Append
-Add
-Remove
-Hide 
-Swap
-Round
-Convert
+Append <br>
+Add<br>
+Remove<br>
+Hide <br>
+Swap<br>
+Round<br>
+Convert<br>
 
 ** We will try to limit these verbs to the minimal as possible so it would be easy to find what u r seeking.
