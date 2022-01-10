@@ -1,3 +1,24 @@
+======================= RELATED HTML ========================
+
+<div style="display:none">
+<div id="sub">{%invoice_subtotal%}
+</div>
+<div id="tax">{%tax-total%}
+</div>
+<div id="dis">{%discount%}
+</div>
+<div id="total">{%invoice_total%}
+</div>
+<div id="qr_code">
+{%sa_qr_code_image%}
+</div>
+<div id="spelled_total">{%invoice_total_spelled%}
+</div>
+</div>
+
+=========================================================
+
+<script>
 function totalTable(){
 var tbl=document.getElementById("listing_table");
 var startingRow = tbl.rows.length;
@@ -51,13 +72,5 @@ document.querySelectorAll('.total_row')[4].querySelector('td:nth-child(2)').inne
 
 }
 
-  function swap(in1,in2,table_id)
-  {
-    var table = document.getElementById(table_id);
-    for (var i = 0, row; row = table.rows[i]; i++)
-    {
-      var temp = row.cells[in1].innerHTML;
-      row.cells[in1].innerHTML = row.cells[in2].innerHTML;
-      row.cells[in2].innerHTML = temp;
-    }
-  }
+
+</script>
