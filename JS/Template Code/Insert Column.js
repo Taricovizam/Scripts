@@ -1,0 +1,14 @@
+function insertCol(index, colLabel, labelId, cellClass) {
+
+    var tbl = document.getElementById('listing_table');
+
+    for (i = 0; i < tbl.rows.length; i++) {
+      var newCell = tbl.rows[i].insertCell(index);
+      newCell.classList.add(cellClass);
+    }
+    var firstCell = tbl.rows[0].cells[index];
+    firstCell.outerHTML = "<th id=" + labelId + ">" + colLabel + "</th>"
+    // firstCell.id = labelId
+    firstCell.style.cssText = "border-top:1px solid #000;font-weight:bold;text-align:center;background:#e5e5e5"
+
+  }
