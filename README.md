@@ -1,18 +1,22 @@
 ## About This Repo:
 
-This repo contains JS scripts that help in customizing some inexisting features in the system:
+This repo contains JS scripts that help customizing templates and add new features to Daftra:
 
-- If u want an easy way to look up a function in this repo, so we sorted out a way of lookup using VERBS.
-- Every file contains one only function, and Every file starts with a verb.
-- u probably, coming here, have a question that needs an answer or are desperate for a helping hint => use the most prominant verb in ur question to look up what u want. 
-- Use these verbs as keywords to find want u looking for:
+- The easist way to look up a function in this repo, is to find an action VERB in a question uses HOW e.g. How can I **add** a column? ADD: is ur search keyword.
+  <br>
+### **Other examples:**
+- Append <br>
+- Add<br>
+- Remove<br>
+- Hide <br>
+- Swap<br>
+- Round<br>
+- Convert<br><br>
 
-Append <br>
-Add<br>
-Remove<br>
-Hide <br>
-Swap<br>
-Round<br>
-Convert<br>
 
-** We will try to limit these verbs to the minimal as possible so it would be easy to find what u r seeking.
+
+= *Use **Ctrl + F** for easier and faster search.*
+
+= *Images that could follow a snippet of code with the same name are the final output demonestration.*
+
+= *Verbs are limited to the minimal possible number so u are not feeling lost in ur quest.*

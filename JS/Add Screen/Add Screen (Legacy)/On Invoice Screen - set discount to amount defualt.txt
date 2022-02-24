@@ -1,0 +1,3 @@
+$('#InvoiceDiscountAmount').show();
+$('#InvoiceDiscount').hide();
+$('#discount_type option[value=fixed]').prop('selected', 'selected').change();

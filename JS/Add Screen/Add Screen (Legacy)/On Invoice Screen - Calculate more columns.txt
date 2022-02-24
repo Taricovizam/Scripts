@@ -1,0 +1,37 @@
+	<script>
+
+$(document).ready(function() {
+		
+		 $("#InvoiceLayout").trigger("change");
+		$(document).on('change', "#InvoiceLayout",function(){
+			layout_id=$("#InvoiceLayout").val();
+			if(layout_id=="2"){
+ $('#label_quantity').hide()
+$('.Quantity').hide()
+
+
+$(document).on('input', '.col-3 textarea', function () {
+    $(this).closest('tr').find('.Quantity input').val(parseFloat($(this).closest('tr').find('.col-3 textarea').val()) * parseFloat($(this).closest('tr').find('.col-4 textarea').val()));
+$("#InvoiceLayout").triggerHandler("change",["def"]);
+
+});
+
+$(document).on('input', '.col-4 textarea', function () {
+    $(this).closest('tr').find('.Quantity input').val(parseFloat($(this).closest('tr').find('.col-3 textarea').val()) * parseFloat($(this).closest('tr').find('.col-4 textarea').val()));
+$("#InvoiceLayout").triggerHandler("change",["def"]);
+ 	
+});
+		
+			
+		
+		}
+		
+		});
+		
+
+		
+		
+		
+		
+		});
+		</script>

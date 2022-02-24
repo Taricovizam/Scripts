@@ -1,0 +1,7 @@
+var table = document.getElementsByClassName('listing-table')[0]
+var word = table.rows[4].cells[7].innerHTML
+var str = word.split('.')[1]
+var final = str.substr(0,2)
+alert(final)
+
+//need loop to work poreperly

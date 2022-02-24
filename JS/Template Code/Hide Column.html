@@ -1,23 +1,18 @@
 <script>
 
-function hideColumn (col_Number, table_id) {
+function hideCol(index, table_id) {
 var tbl = document.getElementById(table_id);
+var rows = tbl.rows;
 
-var cell_number = col_Number - 1
-for (i=0; i<tbl.rows.length; i++){
-tbl.rows[i].cells[cell_number].style.display = "none"
+for (i=0; i<rows.length; i++){
+rows[i].cells[index].style.display = "none"
 
 				}
 					}
  try
   {
-       hideColumn (4, 'listing_table')
-       hideColumn (5, 'listing_table')
-  }
-  catch(err)
-  {
-
-  }
+     hideCol(5, 'listing_table')
+  }catch(err){}
 
 
 </script>

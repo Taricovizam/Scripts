@@ -1,0 +1,17 @@
+$(document).ready(function() {
+ 
+var $field1 = $("#InvoiceDueAfter");
+var $field2 = $("#CustomModelField7");
+
+$field1.on("keydown",function(){
+   setTimeout(checkValue,0); 
+});
+
+var v2 = $field2.val();
+var checkValue = function(){
+    var v1 = $field1.val();
+    if (v1 != v2){
+        $field2.val(v1);
+        v2 = v1;
+    }
+};

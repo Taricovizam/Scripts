@@ -1,0 +1,13 @@
+function calculateUnitPriceWoVat (){
+var unitPrice =  document.querySelectorAll('#listing_table td:nth-child(4)')
+var unitTax =  document.querySelectorAll('#listing_table td:nth-child(2)')
+var itemTotal = document.querySelectorAll('#listing_table td:nth-child(5)')
+var qty = document.querySelectorAll('#listing_table td:nth-child(3)')
+
+for (var i=0; i<unitPrice.length; i++){
+var unitTaxFloat = parseFloat(unitTax[i].innerText.replace(/,/g, "")) 
+unitPrice[i].innerText = +parseFloat(parseFloat(unitPrice[i].innerText.replace(/,/g, "")) - unitTaxFloat).toFixed(2)
+itemTotal[i].innerText = parseFloat(unitPrice[i].innerText * parseFloat(qty[i].innerText.replace(/,/g, "")))
+}
+
+}

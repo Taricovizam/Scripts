@@ -1,0 +1,44 @@
+<script>
+function roundingTaxes() {
+var taxValue = document.querySelectorAll('#listing_table tr td:nth-child(4)')
+for(var i=0; i<taxValue.length; i++){
+taxValue[i].innerText = parseFloat(taxValue[i].innerText.replace(/\,/g,''),10).toFixed(2)
+}
+}
+
+  function swap(in1,in2,table_id)
+  {
+    var table = document.getElementById(table_id);
+    for (var i = 0, row; row = table.rows[i]; i++)
+    {
+      var temp = row.cells[in1].innerHTML;
+      row.cells[in1].innerHTML = row.cells[in2].innerHTML;
+      row.cells[in2].innerHTML = temp;
+    }
+  }
+  try
+  {
+         roundingTaxes();
+         swap(5,3,'listing_table');
+         swap(2,6,'listing_table');
+         swap(4,7,'listing_table');
+var mainTable = document.getElementById('listing_table')
+var colCount = mainTable.rows[0].cells 
+
+if(colCount.length== 9) {
+
+         swap(5,8,'listing_table');
+         swap(7,8,'listing_table');
+}else{
+ swap(5,6,'listing_table');
+for(var i=0; i<mainTable.rows.length; i++){
+mainTable.rows[i].cells[4].classList.add('hidden')
+}
+}
+  }
+  catch (err)
+  {
+
+  }
+
+  </script>

@@ -1,0 +1,11 @@
+$(document).on('change', "#InvoiceLayout",function(){
+    layout_id=$("#InvoiceLayout").val();
+    if(layout_id=="//Template ID"){
+        // Add Your Code
+
+
+
+}
+
+});
+$("#InvoiceLayout").triggerHandler("change",["def"]);

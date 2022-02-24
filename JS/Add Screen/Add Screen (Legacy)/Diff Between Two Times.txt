@@ -1,0 +1,28 @@
+//Change Field Type
+$('.col-3 textarea,.col-3 input, .col-4 textarea, .col-4 input').each(function () {
+        var attrs = {};
+        $.each(this.attributes, function () {
+            attrs[this.name] = this.value;
+        });
+        currentvalue = $(this).val();
+        $(this).replaceWith($('<input>').attr({type:"time"}).prop(attrs));
+      
+    });
+
+
+$(document).on('change', '.col-3 input, .col-4 input', function () {
+   var StartDate = $(this).closest('tr').find('.col-3 input').val();
+   var EndDate = $(this).closest('tr').find('.col-4 input').val();
+var timeStartH = new Date("01/01/2007 " + StartDate).getHours();
+var timeStartM = new Date("01/01/2007 " + StartDate).getMinutes()
+var timeEndH = new Date("01/01/2007 " + EndDate).getHours();
+var timeEndM = new Date("01/01/2007 " + EndDate).getMinutes()
+var hours  = timeEndH - timeStartH;
+console.log(hours)
+if (hours<0){hours = hours*-1}
+var minutes  = timeEndM - timeStartM;
+console.log(minutes)
+if (minutes<0){minutes = minutes*-1}
+ var NewDiff = hours + minutes/60
+  console.log(NewDiff)
+});

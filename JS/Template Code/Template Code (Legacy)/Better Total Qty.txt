@@ -1,0 +1,12 @@
+try {
+var table=document.getElementsByTagName('table')[5];
+var ss=table.rows[0].cloneNode(true);
+ss.getElementsByTagName('td')[1].innerHTML='Total';
+ss.getElementsByTagName('td')[2].innerHTML='{%invoice_item_qty%}';
+
+table.appendChild(ss); // this to insert varaibale values as a child
+//table.insertBefore(ss, table.firstChild); // this to insert varaibale values as a child but before parent's first child
+}
+catch(err) {
+ //
+}

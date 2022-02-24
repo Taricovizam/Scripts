@@ -1,0 +1,12 @@
+var tbl = document.getElementById('listing_table');
+ try {
+var qtyIndex = document.getElementById('label_quantity').cellIndex;
+var colNum = tbl.rows[0].cells.length
+ for (var i = 0; i<tbl.rows.length;i++){
+         tbl.rows[i].cells[qtyIndex].style.borderLeft = "1px solid #555555"
+      for(var x=qtyIndex+1; x<colNum; x++){
+                tbl.rows[i].cells[x].classList.add('hidden')
+      }
+
+}
+ }catch(e){}

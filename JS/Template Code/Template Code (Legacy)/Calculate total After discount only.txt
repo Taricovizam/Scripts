@@ -1,0 +1,9 @@
+function calculateTotalAfDiscount() {
+
+var subtotal = document.getElementById('invoice_subtotal')
+var discount = document.getElementById('discount')
+var totalWoTax =  document.getElementById('total_woTax')
+console.log(subtotal.innerText.replace("&nbspر.س","").replace(/,/g, ""))
+totalWoTax.innerHTML = parseFloat(parseFloat(subtotal.innerText.replace("&nbspر.س","").replace(/,/g, "")) - parseFloat(discount.innerText.replace("&nbspر.س","").replace(/,/g, "") )).toFixed(2) + "&nbspر.س"
+
+}

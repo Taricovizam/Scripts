@@ -1,0 +1,22 @@
+<script>
+
+function fillPage(rowFiller, table_id) {
+
+var tbl = document.getElementById(table_id);
+var rowCount = tbl.rows.length;
+var cellCount = tbl.rows[0].cells.length;
+
+for (var i = rowCount; i< rowFiller; i++){
+  var newRow = tbl.insertRow(rowCount)
+  for ( var j = 0; j < cellCount; j++) {
+    var newCell = newRow.insertCell(j);
+    }
+  }
+}
+
+
+try{
+  fillPage(20, "listing_table")
+}
+catch(err){}
+</script>
