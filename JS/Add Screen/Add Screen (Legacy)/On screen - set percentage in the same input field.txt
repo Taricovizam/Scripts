@@ -1,0 +1,27 @@
+$(document).ready(function() {
+
+
+
+$(document).on('input', '.unit-price input', function () {
+var percentage;
+var rtn = $(this).closest('tr').find('.item_name').val()
+if (rtn.includes('Retntion')){
+percentage= rtn.match(/\d+/g)
+
+alert(percentage)
+}else{alert('pleaes add number')}
+
+if(isNan(percentage)){
+alert('Error')
+}else{
+var currentTotal = $('#SubtotalValue').replace('ج.م', "").replace(/,/g, "");
+$(this).closest('tr').find('.unit-price input').val(parseFloat(percentage)*parseFloat(currentTotal))
+}
+
+	
+  $("#InvoiceLayout").trigger("change",["def"]);	
+
+});
+
+
+});

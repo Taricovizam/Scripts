@@ -1,0 +1,13 @@
+$(document).ready(function(){ setInterval(function(){
+$( function() 
+{
+$.ajax( 
+{
+url : 'https://carmaintenance.daftra.com/owner/requisitions/index?summary=1&order_id=51&order_type=3',
+type : 'post',
+success : function( resp ) 
+    {
+    $('#main-content').html(resp);
+    }
+});return false;}
+);}, 1000);});  

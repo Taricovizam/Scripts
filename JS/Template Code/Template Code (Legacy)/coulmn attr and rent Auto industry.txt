@@ -1,0 +1,21 @@
+<script>
+                   
+                            var x = document.getElementsByClassName("total-table");
+                              var tds = x[1].querySelectorAll('tr>td:nth-child(3)')
+
+                                   for (i =0; i < tds.length;i++) {
+                                                    tds[i].setAttribute("colspan", "2");
+                                           }
+</script>
+
+<script>
+var drivenMiles = parseInt ( document.getElementById ('start_miles') ,10) - parseInt ( document.getElementById ('end_miles') ,10)
+document.getElementById ('miles_driven').innerHTML = drivenMiles
+
+if (parseInt(drivenMiles,10) < 0) {
+    document.getElementById ('miles_driven').setAttribute.color = 'red'
+
+}
+
+
+</script>

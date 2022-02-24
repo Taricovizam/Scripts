@@ -1,0 +1,10 @@
+<script>
+//================= jQuery ====================
+    
+    $(document).on('change', "#InvoiceLayout",function(){
+    layout_id = $("#InvoiceLayout").val();
+    if(layout_id=="3"){
+        $('body').append('<style>#listing_table tr *:nth-child(8){display: none !important}</style>')}
+    
+    });
+    </script>

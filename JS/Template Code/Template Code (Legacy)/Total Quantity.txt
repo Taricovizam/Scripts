@@ -1,0 +1,54 @@
+
+<script>
+function totalQuantity (tableID,titleCellNum,colNum,resultCellNum){
+       var firstTable = document.getElementById(tableID);
+        var rowNum = firstTable.rows.length;
+
+        var totalRow = firstTable.insertRow(rowNum)
+        
+
+        for ( var i = 0; i < firstTable.rows[0].cells.length; i++) {
+
+            var cell = totalRow.insertCell(i);
+             
+           
+
+        }
+        
+        var allRows = firstTable.rows.length ;
+        var allCells = firstTable.rows[0].cells.length;
+
+        firstTable.rows[allRows-1].cells[titleCellNum-1].innerHTML = "Grand Total"
+        
+
+            
+        var allQty = document.getElementById(tableID).querySelectorAll('tr>td:nth-child(colNum)')
+        var totalQty = 0;
+
+        for (var x=0; x < allQty.length; x++) {
+
+
+            var y = parseInt (allQty[x].innerHTML)
+            if (isNaN(y)){
+
+                y = 0
+            }
+
+        totalQty =  totalQty + y
+        
+        }
+        firstTable.rows[allRows-1].cells[resultCellNum].innerHTML = totalQty ;
+}
+
+try
+		{
+					totalQuantity('listing_table',3,5,4);
+                                       
+				
+		}
+		catch(err)
+		{
+
+		}
+      
+</script>

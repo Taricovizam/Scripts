@@ -1,0 +1,29 @@
+<script>
+$(document).ready(function () {
+    adjustDateFields();
+    $('.col-3 input').trigger('change');
+    $('.col-4 input').trigger('change');
+    $("#AddItem").click(function () {
+        setTimeout(function () {
+            adjustDateFields();
+        }, 250);
+    });
+});
+
+function adjustDateFields() {
+    $('.col-3 textarea,.col-3 input, .col-4 input,.col-4 textarea').each(function () {
+        var attrs = {};
+        $.each(this.attributes, function () {
+            attrs[this.name] = this.value;
+        });
+        currentvalue = $(this).val();
+        $(this).replaceWith($('<input>').prop(attrs).removeClass('hasDatepicker').val(currentvalue).datepicker());
+    });
+}
+
+$(document).on('change', '.col-3 input, .col-4 input', function () {
+    $(this).closest('tr').find('.col-5 textarea').val(moment($(this).closest('tr').find('.col-4 input').val()).diff(moment($(this).closest('tr').find('.col-3 input').val()), 'days'));
+$("#label_description").css("width","260px");
+$("#label_item").css("width","100px");
+});
+</script>

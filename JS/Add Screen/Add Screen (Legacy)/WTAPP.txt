@@ -1,0 +1,124 @@
+//Invoice Add Page
+
+<script>
+
+
+window.onload = function () {
+    document.getElementById("InvoiceForm").onsubmit = function onSubmit(form) {
+     var num = document.getElementById('InvoiceClientPhone2').value 
+     var clientName= document.getElementById('InvoiceClientId');
+     var name = clientName.querySelector('optgroup>option:first-child').innerText;
+
+
+  if (num == "") {
+    alert("num is embty");
+     num = document.getElementById('InvoiceClientPhone1').value
+}
+
+
+localStorage.setItem('clientPhone', num)
+localStorage.setItem('clientName', name)
+
+
+    }
+}
+
+ </script>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Invoice View Page
+<script>
+
+ var clientNumber = localStorage.getItem("clientPhone");
+   console.log(clientNumber );
+   var yourMessage = "????? ???????? ???? ???? ???????? ?????? ??????? ???"
+   var invoiceURL = window.location.href+".pdf"   
+
+setTimeout(function(){ 
+
+function sendWhastappLink() {
+
+ 
+   var number = this.clientNumber ;
+   var URL = this.invoiceURL 
+   var message = this.yourMessage    ;
+if (number != null ){
+
+  window.open('https://api.whatsapp.com/send?phone=' + number + '&text=%20' + message +"/n" + URL , '_blank');
+  localStorage.removeItem("clientPhone");
+}
+else {alert('no phone number')}
+}
+sendWhastappLink();
+
+
+ },1000);
+</script>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//With Invoice ViewLink(Should Place "Clinet View Link" Place Holder in the invoice Template with id('view_link'))
+<script>
+window.onload = function () {
+     var clientNumber = localStorage.getItem("clientPhone");
+      
+      console.log(clientNumber );
+    var url = window.location.toString();
+    url = url.replace(/view/, 'preview');
+    var invoiceIframe = document.createElement('iframe');
+    invoiceIframe.style.display = "none";
+    invoiceIframe.src = url
+    invoiceIframe.id = "targetIframe";
+   document.getElementById("PaymentView").appendChild(invoiceIframe );
+
+    var iframe = document.getElementById('targetIframe');
+    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+    checkIframeLoaded();
+
+function checkIframeLoaded() {
+    // Check if loading is complete
+    if (  iframeDoc.readyState  == 'complete' ) {
+      
+        iframe.contentWindow.onload = function(){
+            console.log("I am loaded");
+            sendWhastappLink();
+        };
+        
+    } 
+
+    // If we are here, it is not loaded. Set things up so we check   the status again in 100 milliseconds
+    window.setTimeout(checkIframeLoaded, 100);
+}
+}
+
+function sendWhastappLink() {
+ setTimeout(function(){ 
+      var clientNumber = localStorage.getItem("clientPhone");
+      var clientName =  localStorage.getItem("clientName");
+      console.log(clientNumber );
+       console.log(clientName );
+      var yourMessage = "سعدنا بخدمتكم، مرفق رابط الفاتورة للخدمة المقدمة لكم"
+      var iframe = document.getElementById('targetIframe');
+        console.log(iframe )
+      var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+        var invoiceLink= iframeDoc.getElementById('viewLink');
+      var link = invoiceLink.innerText
+     console.log(link)
+   
+     var number = "+966" + clientNumber ;
+     console.log(number);
+     var message = yourMessage  + "%0A" + link;
+     console.log(message);
+
+if (clientNumber != null && clientNumber  != ""){
+ 
+    window.open('https://api.whatsapp.com/send?phone='+ number + '&text=' + message , '_blank');
+  localStorage.removeItem("clientPhone");
+}
+}, 1000);
+}
+
+</script>

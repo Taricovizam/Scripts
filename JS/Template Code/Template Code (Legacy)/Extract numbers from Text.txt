@@ -1,0 +1,3 @@
+//Use this with the variable
+
+.innerText.match(/\d+/g)

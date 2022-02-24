@@ -1,0 +1,174 @@
+<ADD>
+
+<script>
+    $(document).on('change', ".item_col_4, .item_col_5",function(){
+        var parent = $(this).closest('tr');
+        var qty = parent.find('.item_col_4').val() * parent.find('.item_col_5').val() / 1000000;
+        parent.find('.item-qty').val(qty.toFixed(2));
+    });
+    $(document).ready(function () {
+  setTimeout(function() { 
+    $('#listing_table').find('td.col-2 textarea').attr('readonly', false)
+         $('#listing_table').find('td.col-1 textarea').attr('readonly', true)
+    }, 500);
+    
+        $('body').append('<style>.item-tax2, .tax2 {display: none !important;}</style>')
+      $('#AddItem').bind('click',function(e){
+                
+                  $('#listing_table').find('td.col-2 textarea').attr('readonly', false)
+                     $('#listing_table').find('td.col-1 textarea').attr('readonly', true)
+             
+  });
+    })
+</script>
+
+
+<script>
+$(document).on('change', "#InvoiceLayout",function(){
+    layout_id=$("#InvoiceLayout").val();
+    if(layout_id=="7"){
+$( "#label_quantity" ).after($('#label_quantity').clone().wrap('<p>').parent().html().replace('Amount','Quantity') );
+$( ".Quantity" ).after($('.Quantity').clone().wrap('<p>').parent().html().replace("item-qty","item-qty-2") );
+
+
+$('#AddItem').bind('click',function(e){
+
+     
+                var tr=$('#listing_table').find('tr.itemRow:last-child');
+                var td=tr.find( ".Quantity" );
+                td.after(td.clone().wrap('<p>').parent().html().replace("item-qty","item-qty-2") );
+                tr.html(tr.html().replace("item_col_5","item_col_6").replace('col_5','col_6'));
+                var td1=tr.find( ".item_name" );
+                $(td1).after('<input class="item_col_5" type="hidden" value="test" name="'+$(td1).attr('name').replace('item','col_5')+'" //>');
+             
+                           
+        });
+
+$(document).on('change', ".item_col_4, .item_col_6, .item-qty-2",function(){
+    var parent = $(this).closest('tr');
+    var v6=parent.find('.item_col_6').val();
+    var v4=parent.find('.item_col_4').val();
+    var v_qty=parent.find('.item-qty-2').val();
+    var qty = v4 * v6 / 1000000;
+    parent.find('.item-qty').val(qty.toFixed(2));
+    var json_obj={};
+    json_obj.item_col_4=v4;
+    json_obj.item_col_6=v6;
+    json_obj.qty=v_qty;
+    console.log(JSON.stringify(json_obj));
+    parent.find('.item_col_5').val(JSON.stringify(json_obj));
+
+});
+$(document).ready(function () {
+    $('body').append('<style>.item-tax2, .tax2 {display: none !important;}</style>')
+});
+
+
+$('#listing_table').html($('#listing_table').clone().wrap('<p>').parent().html().replace("item_col_5","item_col_6").replace('col_5','col_6'));
+
+$('.item_name').each(function (index, value) {
+    //console.log($(this).html());
+    $(this).after('<input class="item_col_5" type="hidden" value="test" name="'+$(this).attr('name').replace('item','col_5')+'" //>');
+});
+
+       
+
+
+}
+
+});
+</script>
+
+
+<EDIT>
+<script>
+    $(document).on('change', ".item_col_4, .item_col_5",function(){
+        var parent = $(this).closest('tr');
+        var qty = parent.find('.item_col_4').val() * parent.find('.item_col_5').val() / 1000000;
+        parent.find('.item-qty').val(qty.toFixed(2));
+    });
+    $(document).ready(function () {
+
+          
+        $('body').append('<style>.item-tax2, .tax2 {display: none !important;}</style>')
+setTimeout(function() { 
+    $('#listing_table').find('td.col-2 textarea').attr('readonly', false)
+     $('#listing_table').find('td.col-1 textarea').attr('readonly', true)
+    }, 500);
+
+  $('#AddItem').bind('click',function(e){
+  
+                  $('#listing_table').find('td.col-2 textarea').attr('readonly', false)
+                 $('#listing_table').find('td.col-1 textarea').attr('readonly', true)
+  });
+    })
+</script>
+
+<script>
+setTimeout(function(){
+$(document).on('change', "#InvoiceLayout",function(){
+    layout_id=$("#InvoiceLayout").val();
+    if(layout_id=="7"){
+        // Add New Column
+$( "#label_quantity" ).after($('#label_quantity').clone().wrap('<p>').parent().html().replace('Amount','Quantity') );
+$( ".Quantity" ).after($('.Quantity').clone().wrap('<p>').parent().html().replace("item-qty","item-qty-2") );
+
+        $(document).on('click', "#AddItem",function(){
+
+                var tr=$('#listing_table').find('tr:last-child');
+                var td=tr.find( ".Quantity" );
+                td.after(td.clone().wrap('<p>').parent().html().replace("item-qty","item-qty-2") );
+                tr.html(tr.html().replace("item_col_5","item_col_6").replace('col_5','col_6'));
+                var td1=tr.find( ".item_name" );
+                $(td1).after('<input class="item_col_5" type="hidden" value="test" name="'+$(td1).attr('name').replace('item','col_5')+'" //>');
+
+        });
+
+$(document).on('change', ".item_col_4, .item_col_6, .item-qty-2",function(){
+    var parent = $(this).closest('tr');
+    var v6=parent.find('.item_col_6').val();
+    var v4=parent.find('.item_col_4').val();
+    var v_qty=parent.find('.item-qty-2').val();
+    var qty = v4 * v6 / 1000000;
+    parent.find('.item-qty').val(qty.toFixed(2));
+    var json_obj={};
+    json_obj.item_col_4=v4;
+    json_obj.item_col_6=v6;
+    json_obj.qty=v_qty;
+    console.log(JSON.stringify(json_obj));
+    parent.find('.item_col_5').val(JSON.stringify(json_obj));
+
+});
+$(document).ready(function () {
+    $('body').append('<style>.item-tax2, .tax2 {display: none !important;}</style>')
+});
+
+
+$('#listing_table').html($('#listing_table').clone().wrap('<p>').parent().html().replace(/item_col_5/g,"item_col_6").replace(/col_5/g,'col_6'));
+
+$('.item_name').each(function (index, value) {
+    //console.log($(this).html());
+    $(this).after('<input class="item_col_5" type="hidden" value="test" name="'+$(this).attr('name').replace('item','col_5')+'" //>');
+});
+
+        $('.item_col_6').each(function (index, value) {
+            console.log($(this).val());
+            var parent = $(this).closest('tr');
+            parent.find('.item_col_5').val($(this).val());
+            try {
+                var to_obj=JSON.parse($(this).val());
+                parent.find('.item_col_6').val(to_obj.item_col_6);
+                parent.find('.item_col_4').val(to_obj.item_col_4);
+                parent.find('.item-qty-2').val(to_obj.to_obj.qty);
+            }catch (e) {
+                console.log(e);
+            }
+        });
+
+
+}
+
+});
+$("#InvoiceLayout").change();
+ }, 2000);
+</script>

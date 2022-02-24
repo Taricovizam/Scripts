@@ -1,0 +1,16 @@
+function doubleDescription() {
+
+var arName = document.querySelectorAll('#listing_table tr td:nth-child(2)');
+var arDescription = document.querySelectorAll('#listing_table tr td:nth-child(3)');
+var enName = document.querySelectorAll('#listing_table tr td:nth-child(4)');
+var enDescription = document.querySelectorAll('#listing_table tr td:nth-child(5)');
+
+for(i=0; i < arDescription .length; i++){
+
+var newName = "<div>" + enName[i].innerText + "<br>" +  arName[i].innerText + "</div>"
+var newDescription =  enDescription[i].innerText + "<br>" + arDescription[i].innerText 
+
+arName[i].innerHTML = newName + "<p></p>" + newDescription 
+
+}
+}

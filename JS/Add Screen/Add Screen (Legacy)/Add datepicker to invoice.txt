@@ -1,0 +1,25 @@
+<script>
+
+$(document).ready(function () {
+    adjustDateFields();
+    $('.col-3 input').trigger('change');
+    $("#AddItem").click(function () {
+        setTimeout(function () {
+            adjustDateFields();
+        }, 250);
+    });
+});
+
+function adjustDateFields() {
+    $('.col-3 textarea,.col-3 input').each(function () {
+        var attrs = {};
+        $.each(this.attributes, function () {
+            attrs[this.name] = this.value;
+        });
+        currentvalue = $(this).val();
+        $(this).replaceWith($('<input>').prop(attrs).removeClass('hasDatepicker').val(currentvalue).datepicker());
+    });
+}
+
+
+</script>

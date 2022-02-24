@@ -1,0 +1,8 @@
+var table = document.getElementsByClassName('listing-table')[0]
+table.appendChild(document.createElement('thead'))
+
+var ss=table.rows[0].cloneNode(true);
+var head = table.getElementsByTagName('thead')[0]
+head.appendChild(ss);
+
+table.rows[1].style.display = "none";

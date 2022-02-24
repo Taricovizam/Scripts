@@ -1,0 +1,36 @@
+// Decrease fractions in invoice table
+
+function numFixed() {
+
+var myTd = document.querySelectorAll('#listing_table tr>td:nth-child(8)')
+for (var i = 0; i < myTd.length; i++){
+
+var tdValue = myTd[i].innerText
+myTd[i].innerText = parseFloat(tdValue.replace(/\,/g,''),10).toFixed(2)
+
+// for not rounding
+var tdValue = myTd[i].innerText
+var newTdValue = parseFloat(tdValue.replace(/\,/g,''),10)
+newTdValue = (Math.floor(100 * newTdValue) / 100).toFixed(2);
+myTd[i].innerText = newTdValue
+
+
+}
+
+}
+
+  try
+  {
+        numFixed ();
+       
+  }
+  catch(err)
+  {
+
+  }
+
+
+
+
+
+

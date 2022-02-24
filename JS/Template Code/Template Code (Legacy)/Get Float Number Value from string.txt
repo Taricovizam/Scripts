@@ -1,0 +1,3 @@
+﻿var totalWtax = document.getElementById('total-wTax').innerHTML.replace(/,/g, "")
+
+.replace("&nbspر.س","") add this to remove any text after number 

@@ -1,0 +1,28 @@
+<script>
+//================= jQuery ====================
+
+    $(document).on("change", "#InvoiceLayout", function(){
+    let layout_id = $("#InvoiceLayout").val();
+    if(layout_id == "5"){
+    $("#listing_table tr *:nth-child(8)").css("display","none");
+    
+    $(document).on("input", ".col-2 textarea", function(){
+    if($(this).closest("tr").find(".col-2 textarea").val().length == 0){$(this).closest("tr").find(".col-2 textarea").val(0)}
+    var x = parseFloat($(this).closest("tr").find(".col-2 textarea").val())*
+    parseFloat($(this).closest("tr").find(".col-3 textarea").val());
+    $(this).closest("tr").find(".unit-price input").val(x.toFixed(2));
+    //$("#InvoiceLayout").triggerHandler("change",["def"]);
+    });
+    
+    $(document).on("input", ".col-3 textarea", function(){
+    if($(this).closest("tr").find(".col-3 textarea").val().length == 0){$(this).closest("tr").find(".col-3 textarea").val(0)}
+    var x = parseFloat($(this).closest("tr").find(".col-2 textarea").val())*
+    parseFloat($(this).closest("tr").find(".col-3 textarea").val());
+    $(this).closest("tr").find(".unit-price input").val(x.toFixed(2));
+    //$("#InvoiceLayout").triggerHandler("change",["def"]);
+    });
+    }else if(layout_id != "5"){$("#listing_table tr *:nth-child(8)").css("display","revert")}
+    
+    
+    });
+    </script>

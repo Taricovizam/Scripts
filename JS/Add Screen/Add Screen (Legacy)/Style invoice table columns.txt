@@ -1,0 +1,12 @@
+  <style>
+       .discount, .discount input, input.unit-quantity.editable-input  input.multi_units_price.editable-input, .unit-price input, .Quantity input {
+            width: 60px;
+        }
+        
+
+        
+        .item-wrap {
+            width: 170px;
+        }
+
+        </style>

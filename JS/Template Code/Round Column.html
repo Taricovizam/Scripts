@@ -1,0 +1,11 @@
+<script>
+
+function roundCol() {
+var colCells = document.querySelectorAll("#listing_table tr td:nth-child()")
+for(var i=0; i<colCells.length; i++){
+    text = colCells[i].innerText;
+    text = parseFloat(text.replace(/\,/g,'')).toFixed(2)
+}
+}
+
+</script>

@@ -1,0 +1,9 @@
+function removeCurrency() {
+var currencyTd = document.querySelectorAll('#items-list table:nth-child(2) tr td:nth-child(3)')
+for (i=0; i<currencyTd.length; i++){
+currencyTd[i].innerText = currencyTd[i].innerText.split('ر.س').join('')
+
+
+}
+
+}

@@ -1,0 +1,29 @@
+<script>
+
+    $(document).on('change', "#InvoiceLayout",function(){
+    layout_id = $("#InvoiceLayout").val();
+    if(layout_id=="3"){
+    
+    
+     
+    $(document).on('change', ["#SubtotalValue", '.unit-price input','.Quantity input', "#CustomField0"], function () {
+    
+    var dw = parseFloat($("#CustomField0").val())/100;
+    console.log(dw)
+    
+    var sub = parseFloat($("#SubtotalValue").text().replace(/,/g,""));
+    console.log(sub)
+    
+    $("#InvoiceDeposit").val((dw*sub).toFixed(2));
+    
+    });
+    
+    };
+    });
+
+    </script>
+
+
+<!-- REFERENCE SITE ID  2505344 -->
+
+

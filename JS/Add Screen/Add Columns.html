@@ -1,0 +1,16 @@
+<script>
+    //================= jQuery ====================
+
+    function createCol(colTitle, idTh, idTd, colInput) {
+
+        $("#label_quantity").after($("#label_unit_price").clone().wrap("<p>").parent().html().replace(
+            "label_unit_price", idTh).replace("Unit Price", colTitle));
+        $(".Quantity").after($(".unit-price").clone().wrap("<p>").parent().html().replace("unit-price", idTd).replace(
+            "item-unit-price", colInput));
+        $("." + colInput).attr("placeholder", "");
+
+    }
+
+
+    createCol("Previous QTY", "prev_qty_th", "prev_qty_td", "prev_qty_input")
+</script>

@@ -1,0 +1,7 @@
+//Creat <span> with id "vat" conatain palce holder {%tax0_name%} and set display:none
+//Creat <span> with id "vatPercentage" to recive"vat" value
+
+function setVat() {
+var vat = document.getElementById('vat').innerHTML.split('القيمة المضافة').join("")
+ document.getElementById('vatPercentage').innerHTML = vat
+}

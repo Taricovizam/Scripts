@@ -1,0 +1,9 @@
+              $('#InvoiceForm').on('submit', function(evt){
+                                     //yourcode
+                                      evt.preventDefault();                                
+    
+              
+
+         })
+       
+       $('.save').click(function(){$('#InvoiceForm').trigger('submit')})
