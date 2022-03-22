@@ -1,4 +1,4 @@
-<script>
+
   function swapCols(from,to,table_id)
   {
     var table = document.getElementById(table_id);
@@ -12,7 +12,5 @@
   try
   {
     swapCols(4,2,'listing_table');
-      }
-      catch(err){}
-
-  </script>
+   }
+   catch(err){}
