@@ -1,0 +1,41 @@
+</div>
+<div style="display: none">
+  <div id="sub">{%invoice_subtotal%}</div>
+  <div id="tax">{%tax-total%}</div>
+  <div id="discount">{%discount%}</div>
+  <div id="item-discount">{%item-discount-total%}</div>
+  <div id="total">{%invoice_total%}</div>
+</div>
+</div>
+<script>
+    function totalValues() {
+      var tot = document.getElementById("total").innerText;
+      tot = parseFloat(tot.replace(/[, ر س ]+/g, "").trim());
+      var sub = document.getElementById("sub").innerText;
+      sub = parseFloat(sub.replace(/[, ر س ]+/g, "").trim());
+      var tax = document.getElementById("tax").innerText;
+      tax = parseFloat(tax.replace(/[, ر س ]+/g, "").trim());
+      var discount = document.getElementById("discount").innerText;
+      discount = parseFloat(discount.replace(/[, ر س ]+/g, "").trim());
+      var itemDis = document.getElementById("item-discount").innerText;
+      itemDis = parseFloat(itemDis.replace(/[, ر س ]+/g, "").trim());
+      subBeforeDis = sub + itemDis;
+      subAfterDis = sub - discount;
+
+      document.getElementsByClassName("total")[0].innerHTML = tot
+        .toFixed(2)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementsByClassName("sub-before")[0].innerHTML =
+        subBeforeDis.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementsByClassName("vat")[0].innerHTML = tax
+        .toFixed(2)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      document.getElementsByClassName("subtotal")[0].innerHTML = subAfterDis
+        .toFixed(2)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    try {
+      totalValues();
+    } catch (err) {}
+  </script>
