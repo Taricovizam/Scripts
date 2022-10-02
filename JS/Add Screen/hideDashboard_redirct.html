@@ -1,0 +1,25 @@
+<style>
+body{display:none}
+</style>
+
+<script>
+$(document).ready(()=>{
+
+//}else if(!url.includes("dashboard")){
+//$("body").css({display: "revert"})
+
+(function(){
+let url = location.href
+
+if(!/(dashboard|com\/)$/.test(window.location.href)){
+$("body").css({display: "revert"})
+
+}else{
+window.onload = function() {
+window.location.href = "/owner/appointments/index/0/1";
+}
+}
+})()
+
+})
+</script>
