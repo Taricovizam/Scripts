@@ -26,8 +26,8 @@ code_WorkOrders_owner_edit
 
 
 # jouranl Report:
-code_Reports_owner_journal_transactions (client reports)
-code_Products_owner_stocktaking_sheet (ورق الجرد)
+code_Reports_owner_journal_transactions (client reports) \
+code_Products_owner_stocktaking_sheet (ورق الجرد) \
 code_Products_owner_worthsheet (قيمة المخزون)
 
 # Whatsapp Text Message (plugin = 2):
