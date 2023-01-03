@@ -24,6 +24,11 @@ code_PurchaseOrders_owner_edit
 code_WorkOrders_owner_add \
 code_WorkOrders_owner_edit
 
+# Workflow:
+owner_entity_le_workflow-type-entity-(id)_create \
+code_WorkOrders_owner_edit \
+code_WorkOrders_owner_workflow_view
+
 
 # jouranl Report:
 code_Reports_owner_journal_transactions (client reports) \
