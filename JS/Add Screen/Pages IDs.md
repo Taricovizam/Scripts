@@ -29,7 +29,7 @@ owner_entity_le_workflow-type-entity-(id)_create \
 code_WorkOrders_owner_workflow_view
 
 
-# jouranl Report:
+# Journal Report:
 code_Reports_owner_journal_transactions (client reports) \
 code_Products_owner_stocktaking_sheet (ورق الجرد) \
 code_Products_owner_worthsheet (قيمة المخزون)
