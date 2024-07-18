@@ -28,6 +28,9 @@ code_WorkOrders_owner_edit
 owner_entity_le_workflow-type-entity-(id)_create \
 code_WorkOrders_owner_workflow_view
 
+# Local Entities & Related Forms:
+LE: owner_entity(id)_create
+RF: owner_children_entity(id)_create
 
 # Journal Report:
 code_Reports_owner_journal_transactions (client reports) \
